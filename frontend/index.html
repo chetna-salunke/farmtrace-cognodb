@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FarmTrace — farm-to-plate traceability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <header class="app-header">
+    <div class="wordmark">
+      <span class="wordmark-glyph" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="28" height="28">
+          <path d="M20 4 L20 36 M20 20 C10 20 6 12 6 6 M20 20 C30 20 34 12 34 6 M20 28 C13 28 9 33 9 37 M20 28 C27 28 31 33 31 37"
+                fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>FarmTrace</span>
+    </div>
+    <p class="tagline">Trace every dish back to the field it grew in.</p>
+    <div id="db-status" class="db-status" role="status"></div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="FarmTrace sections">
+    <button class="tab is-active" data-tab="dishes" role="tab" aria-selected="true">Dishes &amp; sourcing</button>
+    <button class="tab" data-tab="recalls" role="tab" aria-selected="false">Recall impact</button>
+    <button class="tab" data-tab="restaurants" role="tab" aria-selected="false">Restaurants</button>
+  </nav>
+
+  <main class="panels">
+
+    <!-- ============ DISHES ============ -->
+    <section id="panel-dishes" class="panel is-active">
+      <div class="panel-layout">
+        <aside class="panel-list">
+          <div class="list-head">
+            <h2>Menu items</h2>
+            <input id="dish-search" type="search" placeholder="Search dishes…" aria-label="Search dishes" />
+          </div>
+          <ul id="dish-list" class="entity-list" aria-live="polite">
+            <li class="skeleton-row"></li>
+            <li class="skeleton-row"></li>
+            <li class="skeleton-row"></li>
+          </ul>
+        </aside>
+
+        <div class="panel-detail" id="dish-detail">
+          <div class="empty-state">
+            <div class="empty-glyph" aria-hidden="true">🌿</div>
+            <h3>Pick a dish to trace it</h3>
+            <p>Select any item on the left to see every farm, ingredient and allergen behind it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RECALLS ============ -->
+    <section id="panel-recalls" class="panel">
+      <div class="panel-layout">
+        <aside class="panel-list">
+          <div class="list-head">
+            <h2>Active &amp; past recalls</h2>
+          </div>
+          <ul id="recall-list" class="entity-list" aria-live="polite">
+            <li class="skeleton-row"></li>
+          </ul>
+        </aside>
+
+        <div class="panel-detail" id="recall-detail">
+          <div class="empty-state">
+            <div class="empty-glyph" aria-hidden="true">⚠</div>
+            <h3>Select a recall to see its blast radius</h3>
+            <p>FarmTrace walks Farm → Ingredient → Dish → Restaurant in one hop-by-hop query.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESTAURANTS ============ -->
+    <section id="panel-restaurants" class="panel">
+      <div class="panel-layout">
+        <aside class="panel-list">
+          <div class="list-head">
+            <h2>Restaurants</h2>
+          </div>
+          <ul id="restaurant-list" class="entity-list" aria-live="polite">
+            <li class="skeleton-row"></li>
+          </ul>
+        </aside>
+
+        <div class="panel-detail" id="restaurant-detail">
+          <div class="empty-state">
+            <div class="empty-glyph" aria-hidden="true">🍽</div>
+            <h3>Select a restaurant</h3>
+            <p>See which other restaurants share a supply-chain risk through common farms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast" role="alert" aria-hidden="true"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
