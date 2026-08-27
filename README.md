@@ -1,18 +1,16 @@
 # FarmTrace
 
-<img width="1920" height="1080" alt="Screenshot (802)" src="https://github.com/user-attachments/assets/20444a6b-0451-4b92-b6b7-0a47f41579a9" />
-
-<img width="1920" height="1080" alt="Screenshot (803)" src="https://github.com/user-attachments/assets/d2b451a2-aefc-4585-a943-439a2d607a75" />
-
-<img width="1920" height="1080" alt="Screenshot (804)" src="https://github.com/user-attachments/assets/f25e84f6-c23f-470f-b25a-e9e66c82ab3b" />
-
-<img width="1920" height="1080" alt="Screenshot (805)" src="https://github.com/user-attachments/assets/331000ad-a0f9-4556-b2b3-a14a7714b0f4" />
-
 **Trace every dish back to the farm it grew in — and instantly see what a recall touches.**
 
-# FarmTrace
+<img width="1920" height="1080" alt="Screenshot (802)" src="https://github.com/user-attachments/assets/20444a6b-0451-4b92-b6b7-0a47f41579a9" /> <br/>
 
-Trace any dish back to the farm it came from — and see instantly what a food recall actually touches.
+<img width="1920" height="1080" alt="Screenshot (803)" src="https://github.com/user-attachments/assets/d2b451a2-aefc-4585-a943-439a2d607a75" /> <br/>
+
+<img width="1920" height="1080" alt="Screenshot (804)" src="https://github.com/user-attachments/assets/f25e84f6-c23f-470f-b25a-e9e66c82ab3b" /> <br/>
+
+<img width="1920" height="1080" alt="Screenshot (805)" src="https://github.com/user-attachments/assets/331000ad-a0f9-4556-b2b3-a14a7714b0f4" /> <br/>
+
+
 
 I built this for the Wexa AI take-home assignment. It's a small app for restaurant groups that answers three questions a food-safety manager actually cares about:
 
