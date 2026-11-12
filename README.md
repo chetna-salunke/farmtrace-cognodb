@@ -146,17 +146,6 @@ Then open `http://localhost:4000`.
 If CognoDB happens to be down or unreachable when the server starts, the app doesn't crash — it still serves the page, just returns a clean error instead of hanging, and quietly retries the connection every 15 seconds in the background.
 
 ---
-
-## The main queries, in plain terms
-
-Everything lives in `backend/queries.js`, and every single query uses `$parameters` — nothing is ever built by gluing strings together.
-
-- **`recallImpact`** — the core traversal: walks Farm → Ingredient → Dish → Restaurant in one go, 4 hops. This is what powers the recall page.
-- **`allergenSafeSubstitutes`** — a variable-length walk (1 to 3 hops) across substitute relationships to find something allergen-free.
-- **`dishTrace`** — pulls a dish's ingredients, their source farms, and their allergens all in one query, for the trace diagram.
-- **`sharedSupplyRisk`** — finds other restaurants that pull from the same farms as the one you picked. This one's a 6-hop pattern that would be a nasty self-join in SQL.
-- **`ingredientExposure`** — given one ingredient, shows everywhere it's used.
-
 ---
 
 ## What the app actually looks like
